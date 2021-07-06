@@ -27,8 +27,8 @@ codirector, % Uncomment to add a codirector to the title page
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Gillermo Gebhart}
+\empresaCliente{Voltu Motors}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en una placa de prueba para validar los desarrollos de la placa de control del block de energía, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \$60000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,24 +116,13 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
-
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Un Block de Energía es un dispositivo de almacenamiento y gestión de energía que se crea como una alternativa a los grupos electrógenos. Estos dispositivos almacenan energía en baterías con autonomías superiores a los 7 [KWh] y la suministran cuando es necesario. Típicamente suministran la tensión de red cuando se corta el suministro principal de energía eléctrica.
+Para cumplir su función este dispositivo mide distintas señales del entorno y utiliza estos datos para tomar decisiones. Actualmente es muy complejo generar las condiciones de entorno para verificar que el equipo desarrollado reacciona como lo esperado.
+El sistema embebido a desarrollar debe generar las posibles señales, que el bloque de energía sensa, para corroborar que el equipo responde adecuadamente ante las posibles situaciones del entorno.
+El sistema actual reporta su estado general, las fallas y el estado de sus periféricos. Estos reportes se pueden utilizar para evaluar el comportamiento del equipo. Se espera que generando las señales que el equipo mide para tomar decisiones se pueda evaluar su respuesta.
+En la Figura \ref{fig:diagBloques} se puede observar cómo se integra la propuesta de sistema embebido con el block de energía. Adicionalmente se pueden observar las señales que se pretenden generar. Las señales enlistadas permiten tomar la mayoría de las decisiones al sistema de control.
+El sistema de control también toma decisiones en función del reporte, por comunicación serie, del sistema de gestión de batería (en inglés, Battery Management System, BMS). El proyecto actual no simulará la comunicación del BMS. Esto impacta sobre los ensayos y la forma de utilizar la placa de prueba. Se deberá contar con una batería en buenas condiciones para que el funcionamiento del equipo no sea alterado y que la prueba sea adecuada.
+Un dispositivo de estas características permite a los desarrolladores validar un cambio en el firmware, o una nueva funcionalidad, con sencillez y velocidad.
 
 %\vspace{25px}
 
@@ -146,26 +135,18 @@ La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+Como se introdujo anteriormente, se generará una serie de señales que permita simular las condiciones de entorno que mide la placa de control; De forma que se verificará si responde adecuadamente a las reglas establecidas.
+Como se representa en la Figura \ref{fig:diagBloques}, se generarán 9 señales para realizar las pruebas. Las señales de tensión son efectivamente tensiones no escaladas, por lo que tienen valores de 220 V en alterna o alrededor de 400 V continua.
+Las señales de corrientes son medidas por un transductor que convierte el valor medido en tensión, por lo que el valor de señal a inyectar a la placa es una tensión en el rango de los +5 V a -5 V.
+Finalmente las temperaturas se miden con NTC, por lo que las señales 7, 8 y 9 deben ser en Ohms. Esto se realizará con el uso de potenciómetros digitales que cambian su valor para simular los cambios de temperatura.
+La placa de prueba será comandada por medio de una interfaz por computadora. En la primera versión el usuario podrá establecer las señales para generar y evaluar el comportamiento del equipo.
+Para lograr las señales de tensión el equipo deberá estar conectado a una alimentación de red, a una batería igual a la del equipo cargada y alimentada por el USB de comunicación.
+Este proyecto se vincula con el proceso de desarrollo del block de energía de la empresa Voltu y será utilizado para testear los avances de desarrollo del equipo. Se espera también que permita realizar el control de los equipos en la etapa de producción.
+
 
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -174,75 +155,46 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	&  CEO    	\\ \hline
+Impulsor      & \clientename      &\empclientename  &  CEO     	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Carlos Zalayeta   &\empclientename 	& Desarrollador  	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
  
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna}
-
-
-
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+El propósito de este proyecto es desarrollar un dispositivo que permita evaluar de forma parcial el comportamiento de la placa de control, del Block de Energía, durante su desarrollo.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{itemize}
+	\item Se realizará un prototipo que permita generar las 9 señales listadas en la Figura \ref{fig:diagBloques}.
+	\item No se simulara la comunicación con el BMS.
+	\item No se analizará el comportamiento del equipo por software.
+	\item Se desarrollará un prototipo sin embalaje y sin chasis. 
+	\item Solo dispondrá la electrónica y conectores necesarios.
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto se supone que:
+Se asume que se dispondrá de al menos una PdC y una PdCOM funcional durante todo el desarrollo del sistema.
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se dispondrá de al menos una Placa de Control funcional durante todo el desarrollo.
+	\item Se dispondrá de al menos una Placa de Comunicación funcional durante todo el desarrollo.
+	\item Se dispondrá de al menos una batería con su BMS completo y funcional durante todo el desarrollo.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
