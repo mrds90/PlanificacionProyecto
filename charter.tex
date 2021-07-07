@@ -116,19 +116,24 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-Un Block de Energía es un dispositivo de almacenamiento y gestión de energía que se crea como una alternativa a los grupos electrógenos. Estos dispositivos almacenan energía en baterías con autonomías superiores a los 7 [KWh] y la suministran cuando es necesario. Típicamente suministran la tensión de red cuando se corta el suministro principal de energía eléctrica.
+Un Block de Energía es un dispositivo de almacenamiento y gestión de energía que se crea como una alternativa a los grupos electrógenos. Estos dispositivos almacenan energía en baterías con autonomías superiores a los 7 [KWh] y la suministran cuando es necesario. Típicamente entregan la tensión de red cuando se corta el suministro principal de energía eléctrica.
+
 Para cumplir su función este dispositivo mide distintas señales del entorno y utiliza estos datos para tomar decisiones. Actualmente es muy complejo generar las condiciones de entorno para verificar que el equipo desarrollado reacciona como lo esperado.
 El sistema embebido a desarrollar debe generar las posibles señales, que el bloque de energía sensa, para corroborar que el equipo responde adecuadamente ante las posibles situaciones del entorno.
+
 El sistema actual reporta su estado general, las fallas y el estado de sus periféricos. Estos reportes se pueden utilizar para evaluar el comportamiento del equipo. Se espera que generando las señales que el equipo mide para tomar decisiones se pueda evaluar su respuesta.
+
 En la Figura \ref{fig:diagBloques} se puede observar cómo se integra la propuesta de sistema embebido con el block de energía. Adicionalmente se pueden observar las señales que se pretenden generar. Las señales enlistadas permiten tomar la mayoría de las decisiones al sistema de control.
+
 El sistema de control también toma decisiones en función del reporte, por comunicación serie, del sistema de gestión de batería (en inglés, Battery Management System, BMS). El proyecto actual no simulará la comunicación del BMS. Esto impacta sobre los ensayos y la forma de utilizar la placa de prueba. Se deberá contar con una batería en buenas condiciones para que el funcionamiento del equipo no sea alterado y que la prueba sea adecuada.
+
 Un dispositivo de estas características permite a los desarrolladores validar un cambio en el firmware, o una nueva funcionalidad, con sencillez y velocidad.
 
 %\vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.9\textwidth]{./Figuras/BlockDiagram.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -136,10 +141,15 @@ Un dispositivo de estas características permite a los desarrolladores validar u
 \vspace{25px}
 
 Como se introdujo anteriormente, se generará una serie de señales que permita simular las condiciones de entorno que mide la placa de control; De forma que se verificará si responde adecuadamente a las reglas establecidas.
+
 Como se representa en la Figura \ref{fig:diagBloques}, se generarán 9 señales para realizar las pruebas. Las señales de tensión son efectivamente tensiones no escaladas, por lo que tienen valores de 220 V en alterna o alrededor de 400 V continua.
+
 Las señales de corrientes son medidas por un transductor que convierte el valor medido en tensión, por lo que el valor de señal a inyectar a la placa es una tensión en el rango de los +5 V a -5 V.
+
 Finalmente las temperaturas se miden con NTC, por lo que las señales 7, 8 y 9 deben ser en Ohms. Esto se realizará con el uso de potenciómetros digitales que cambian su valor para simular los cambios de temperatura.
+
 La placa de prueba será comandada por medio de una interfaz por computadora. En la primera versión el usuario podrá establecer las señales para generar y evaluar el comportamiento del equipo.
+
 Para lograr las señales de tensión el equipo deberá estar conectado a una alimentación de red, a una batería igual a la del equipo cargada y alimentada por el USB de comunicación.
 Este proyecto se vincula con el proceso de desarrollo del block de energía de la empresa Voltu y será utilizado para testear los avances de desarrollo del equipo. Se espera también que permita realizar el control de los equipos en la etapa de producción.
 
@@ -176,7 +186,7 @@ El propósito de este proyecto es desarrollar un dispositivo que permita evaluar
 
 \begin{itemize}
 	\item Se realizará un prototipo que permita generar las 9 señales listadas en la Figura \ref{fig:diagBloques}.
-	\item No se simulara la comunicación con el BMS.
+	\item No se simulará la comunicación con el BMS.
 	\item No se analizará el comportamiento del equipo por software.
 	\item Se desarrollará un prototipo sin embalaje y sin chasis. 
 	\item Solo dispondrá la electrónica y conectores necesarios.
@@ -188,7 +198,6 @@ El propósito de este proyecto es desarrollar un dispositivo que permita evaluar
 \label{sec:supuestos}
 
 Para el desarrollo del presente proyecto se supone que:
-Se asume que se dispondrá de al menos una PdC y una PdCOM funcional durante todo el desarrollo del sistema.
 \begin{itemize}
 	\item Se dispondrá de al menos una Placa de Control funcional durante todo el desarrollo.
 	\item Se dispondrá de al menos una Placa de Comunicación funcional durante todo el desarrollo.
