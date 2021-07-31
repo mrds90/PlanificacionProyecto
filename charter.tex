@@ -70,11 +70,8 @@ codirector, % Uncomment to add a codirector to the title page
 		Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha            \\ \hline
 		0        & Creación del documento                                                          & \fechaInicioName \\ \hline
 		1        & Se completa hasta el punto 9 inclusive                                          & 13 de julio 2021 \\ \hline
-		1        & Se completa hasta el punto 12 inclusive                                          & 27 de julio 2021 \\ \hline
-		%2      & Se completa hasta el punto 7 inclusive
-		%		  Se puede agregar algo más \newline
-		%		  En distintas líneas \newline
-		%		  Así                                                    & dd/mm/aaaa \\ \hline
+		2        & Se completa hasta el punto 11 inclusive                                         & 27 de julio 2021 \\ \hline
+		2.1      & Se completa hasta el punto 12 inclusive                                         & 31 de julio 2021 \\ \hline
 		%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 		%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 	\end{tabularx}
@@ -93,7 +90,10 @@ codirector, % Uncomment to add a codirector to the title page
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en una placa de prueba para validar los desarrollos de la placa de control del block de energía, y tendrá un presupuesto preliminar estimado de 610 hs de trabajo y \$60000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', 
+consistirá esencialmente en una placa de prueba para validar los desarrollos de la placa de control del block de energía, y 
+tendrá un presupuesto preliminar estimado de 610 hs de trabajo y \$1275000, con fecha de inicio \fechaInicioName\hspace{1px} y 
+fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -376,8 +376,8 @@ Riesgo: bajo (1) - No existen grandes riesgos en el desarrollo de una interfaz d
 	\item Informe de avances
 	      \begin{enumerate}
 		      \item Redacción de avances en el diseño del Hardware (8 hs).
-			  \item Redacción de avances en el diseño del Firmware (8 hs).
-			  \item Redacción de avances en la validación del sistema (8 hs).
+		      \item Redacción de avances en el diseño del Firmware (8 hs).
+		      \item Redacción de avances en la validación del sistema (8 hs).
 	      \end{enumerate}
 	\item Memoria
 	      \begin{enumerate}
@@ -390,101 +390,35 @@ Riesgo: bajo (1) - No existen grandes riesgos en el desarrollo de una interfaz d
 \end{enumerate}
 
 Cantidad total de horas: 609.5 hs.
+\begin{landscape}
+	\section{10. Diagrama de Activity On Node}
+	\label{sec:AoN}
 
-\section{10. Diagrama de Activity On Node}
-\label{sec:AoN}
+	\begin{figure}[htpb]
+		\centering
+		\includegraphics[width=1.5\textwidth]{./Figuras/Aon_cropped.pdf}
+		\caption{Diagrama en \textit{Activity on Node}}
+		\label{fig:AoN}
+	\end{figure}
+\end{landscape}
 
-\begin{consigna}{red}
-	Armar el AoN a partir del WBS definido en la etapa anterior.
-
-	%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-	%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-	\caption{Diagrama en \textit{Activity on Node}}
-	\label{fig:AoN}
-\end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
-
-
-\section{11. Diagrama de Gantt}
-\label{sec:gantt}
-
-\begin{consigna}{red}
-
-	Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-	\begin{itemize}
-		\item Planner
-		\item GanttProject
-		\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-		\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-		\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-	\end{itemize}
-
-	Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible.
-	Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-	Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-	Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-	Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-	En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-	\begin{figure}[htbp]
-		\begin{center}
-			\begin{ganttchart}{1}{12}
-				\gantttitle{2020}{12} \\
-				\gantttitlelist{1,...,12}{1} \\
-				\ganttgroup{Group 1}{1}{7} \\
-				\ganttbar{Task 1}{1}{2} \\
-				\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-				\ganttmilestone{Milestone o hito}{7} \ganttnewline
-				\ganttbar{Final Task}{8}{12}
-				\ganttlink{elem2}{elem3}
-				\ganttlink{elem3}{elem4}
-			\end{ganttchart}
-		\end{center}
-		\caption{Diagrama de gantt de ejemplo}
-		\label{fig:gantt}
+\begin{landscape}
+	\label{sec:gantt}
+	\section{11. Diagrama de Gantt}
+	\begin{figure}[htpb]
+		\centering
+		\includegraphics[width=1.5\textheight]{./Figuras/Gantt.pdf}
+		\caption{diagrama de Gantt}
+		\label{fig:diagGantt}
 	\end{figure}
 
+\end{landscape}
 
-	\begin{landscape}
-		\begin{figure}[htpb]
-			\centering
-			\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-			\caption{Ejemplo de diagrama de Gantt rotado}
-			\label{fig:diagGantt}
-		\end{figure}
 
-	\end{landscape}
-
-\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-\begin{consigna}{red}
-	Si el proyecto es complejo entonces separarlo en partes:
-	\begin{itemize}
-		\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-		\item El desglose detallado del subtotal de cada una de las áreas.
-	\end{itemize}
-
-	IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
 
 \begin{table}[htpb]
 	\centering
@@ -497,24 +431,24 @@ Es recomendable usar colores y un cuadro indicativo describiendo qué representa
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad}       &
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total}        \\ \hline
-		                                                            &
-		\multicolumn{1}{c|}{}                                       &
-		\multicolumn{1}{c|}{}                                       &
-		\multicolumn{1}{c|}{}                                           \\ \hline
-		                                                            &
-		\multicolumn{1}{c|}{}                                       &
-		\multicolumn{1}{c|}{}                                       &
-		\multicolumn{1}{c|}{}                                           \\ \hline
-		\multicolumn{1}{|l|}{}                                      &
-		                                                            &
-		                                                            &
-		\\ \hline
-		\multicolumn{1}{|l|}{}                                      &
-		                                                            &
-		                                                            &
-		\\ \hline
+		Placa principal                                             &
+		\multicolumn{1}{c|}{3}                                      &
+		\multicolumn{1}{c|}{10000}                                  &
+		\multicolumn{1}{c|}{30000}                                      \\ \hline
+		Circuito de potencia                                        &
+		\multicolumn{1}{c|}{3}                                      &
+		\multicolumn{1}{c|}{15000}                                  &
+		\multicolumn{1}{c|}{45000}                                      \\ \hline
+		Cableado y componentes de comunicación                      &
+		\multicolumn{1}{c|}{3}                                      &
+		\multicolumn{1}{c|}{2000}                                   &
+		\multicolumn{1}{c|}{6000}                                       \\ \hline
+		Honorarios de desarrollador                                 &
+		\multicolumn{1}{c|}{600}                                    &
+		\multicolumn{1}{c|}{1500}                                   &
+		\multicolumn{1}{c|}{900000}                                     \\ \hline
 		\multicolumn{3}{|c|}{SUBTOTAL}                              &
-		\multicolumn{1}{c|}{}                                           \\ \hline
+		\multicolumn{1}{c|}{981000}                                     \\ \hline
 		\rowcolor[HTML]{C0C0C0}
 		\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 		\rowcolor[HTML]{C0C0C0}
@@ -522,23 +456,15 @@ Es recomendable usar colores y un cuadro indicativo describiendo qué representa
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad}       &
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
 		\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total}        \\ \hline
-		\multicolumn{1}{|l|}{}                                      &
-		                                                            &
-		                                                            &
-		\\ \hline
-		\multicolumn{1}{|l|}{}                                      &
-		                                                            &
-		                                                            &
-		\\ \hline
-		\multicolumn{1}{|l|}{}                                      &
-		                                                            &
-		                                                            &
-		\\ \hline
+		\multicolumn{1}{|l|}{30\% de los costos directos}           &
+		\multicolumn{1}{c|}{1}                                      &
+		\multicolumn{1}{c|}{294300}                                 &
+		\multicolumn{1}{c|}{294300}                                     \\ \hline
 		\multicolumn{3}{|c|}{SUBTOTAL}                              &
-		\multicolumn{1}{c|}{}                                           \\ \hline
+		\multicolumn{1}{c|}{294300}                                     \\ \hline
 		\rowcolor[HTML]{C0C0C0}
 		\multicolumn{3}{|c|}{TOTAL}                                 &
-		\\ \hline
+		\multicolumn{1}{c|}{1275300}                                    \\ \hline
 	\end{tabularx}%
 \end{table}
 
