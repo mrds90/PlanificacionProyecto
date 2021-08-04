@@ -20,8 +20,8 @@ codirector, % Uncomment to add a codirector to the title page
 \autor{Marcos Raul Dominguez Shocron} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Yaki Nachajon Schwartz}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
@@ -90,9 +90,9 @@ codirector, % Uncomment to add a codirector to the title page
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', 
-consistirá esencialmente en una placa de prueba para validar los desarrollos de la placa de control del block de energía, y 
-tendrá un presupuesto preliminar estimado de 610 hs de trabajo y \$1275000, con fecha de inicio \fechaInicioName\hspace{1px} y 
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'',
+consistirá esencialmente en una placa de prueba para validar los desarrollos de la placa de control del block de energía, y
+tendrá un presupuesto preliminar estimado de 610 hs de trabajo y \$1275000, con fecha de inicio \fechaInicioName\hspace{1px} y
 fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
@@ -472,65 +472,99 @@ Cantidad total de horas: 609.5 hs.
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
 	a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
 
-	Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+	Riesgo 1: Demora en la llegada de componentes del exterior.
 	\begin{itemize}
-		\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-		      Justificar el motivo por el cual se asigna determinado número de severidad (S).
-		\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-		      Justificar el motivo por el cual se asigna determinado número de (O).
+		\item Severidad (S): 8
+
+		      La demora en la llegada de componentes del exterior, cuando son necesarios, detiene completamente el avance del proyecto.
+		\item Probabilidad de ocurrencia (O): 9
+
+		      Las demora de recursos del exterior es muy recurrente en Argentina.
 	\end{itemize}
 
-	Riesgo 2:
+	Riesgo 2: El vinculo con la empresa se termine en un plazo muy corto.
 	\begin{itemize}
-		\item Severidad (S):
-		\item Ocurrencia (O):
+		\item Severidad (S): 10.
+
+		      No será posible realizar el proyecto.
+		\item Ocurrencia (O): 2.
+
+		      El vinculo actual con \clientename\hspace{1px}  es poco probable que finalice debido a que actualmente el autor trabaja en relación de dependencia para el.
 	\end{itemize}
 
-	Riesgo 3:
+	Riesgo 3: Accidentes graves en las verificaciones del proyecto debido a los riesgos asociados a la alta tensión.
 	\begin{itemize}
-		\item Severidad (S):
-		\item Ocurrencia (O):
+		\item Severidad (S): 10.
+
+		      EL uso de tensiones mayores a 300 V puede causar daños graves y poner en riesgo el avance del proyecto.
+		\item Ocurrencia (O): 5.
+
+		      El constante uso de las placas con altas tensiones aumenta el riesgo de que se produzcan accidentes.
 	\end{itemize}
 
+	Riesgo 4: Cancelación del proyecto del block de energía por decisión de la empresa.
+	\begin{itemize}
+		\item Severidad (S): 10.
 
+		      La cancelación del proyecto del block de energía torna innecesario el desarrollo de este proyecto
+		\item Ocurrencia (O): 2.
+
+		      La tecnología actualmente es muy demandada y no se presentan amenazas evidentes sobre la continuidad del proyecto.
+	\end{itemize}
+
+	Riesgo 5: Subestimación de tiempos en tareas de la línea crítica
+	\begin{itemize}
+		\item Severidad (S): 6.
+
+		      Este error en la planificación indefectiblemente atrasa todo el plan.
+
+		\item Ocurrencia (O): 7.
+
+		      El poco conocimiento sobre la complejidad del problema a resolver aumenta significativamente las probabilidades de error en la estimación de tiempos.
+	\end{itemize}
 	b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-
 	\begin{table}[htpb]
 		\centering
 		\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 			\hline
 			\rowcolor[HTML]{C0C0C0}
-			Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
-			       &   &   &     &    &    &      \\ \hline
+			Riesgo & S  & O & RPN & S* & O* & RPN* \\ \hline
+			1      & 8  & 9 & 72  & 8  & 3  & 24   \\ \hline
+			2      & 10 & 2 & 20  &    &    &      \\ \hline
+			3      & 10 & 5 & 50  & 10 & 1  & 10   \\ \hline
+			4      & 10 & 2 & 20  &    &    &      \\ \hline
+			5      & 6  & 7 & 42  &    &    &      \\ \hline
 		\end{tabularx}%
 	\end{table}
 
 	Criterio adoptado:
-	Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+	Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 45
 
 	Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 	c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
 
-	Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-	Nueva asignación de S y O, con su respectiva justificación:
-	- Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	- Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-	Justificar el motivo por el cual se asigna determinado número de (O).
+	Riesgo 1: Se definirá con celeridad la lista de componente y se realizara el pedido con anticipación para asegurar un período de tiempo extenso desde que se piden los elementos al exterior hasta que se los necesite.
+	
+	- Severidad (S): 8
+	
+	La severidad no varía.
 
-	Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+	- Probabilidad de ocurrencia (O): 3
+	
+	La anticipación reduce significativamente la probabilidad de que ocupara.
 
-	Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+	Riesgo 3: Se utilizará serigrafía en la placa para indicar las regiones de alta tensión, se utilizara las protecciones y aislaciones necesarias para reducir la probabilidad de shock eléctrico.
 
-\end{consigna}
+	- Severidad (S): 8
+	
+	La severidad no varía.
+	
+	- Probabilidad de ocurrencia (O): 2
+	
+	La anticipación reduce significativamente la probabilidad de que ocupara.
 
 
 \section{14. Gestión de la calidad}
