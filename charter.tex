@@ -69,11 +69,11 @@ codirector, % Uncomment to add a codirector to the title page
 		\rowcolor[HTML]{C0C0C0}
 		Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha            \\ \hline
 		0        & Creación del documento                                                          & \fechaInicioName \\ \hline
-		1        & Se completa hasta el punto 9 inclusive                                          & 13 de julio 2021 \\ \hline
-		2        & Se completa hasta el punto 11 inclusive                                         & 27 de julio 2021 \\ \hline
-		2.1      & Se completa hasta el punto 12 inclusive                                         & 31 de julio 2021 \\ \hline
-		%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-		%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+		1        & Se completa hasta el punto 5 inclusive                                          & 6 de julio 2021  \\ \hline
+		2        & Se completa hasta el punto 9 inclusive                                          & 13 de julio 2021 \\ \hline
+		3        & Se completa hasta el punto 11 inclusive                                         & 27 de julio 2021 \\ \hline
+		3.1      & Se completa hasta el punto 12 inclusive                                         & 31 de julio 2021 \\ \hline
+		4        & Se completa el plan                                                             & 5 de agosto 2021 \\ \hline
 	\end{tabularx}
 \end{table}
 
@@ -472,136 +472,289 @@ Cantidad total de horas: 609.5 hs.
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-	a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
 
-	Riesgo 1: Demora en la llegada de componentes del exterior.
-	\begin{itemize}
-		\item Severidad (S): 8
+Riesgo 1: Demora en la llegada de componentes del exterior.
+\begin{itemize}
+	\item Severidad (S): 8
 
-		      La demora en la llegada de componentes del exterior, cuando son necesarios, detiene completamente el avance del proyecto.
-		\item Probabilidad de ocurrencia (O): 9
+	      La demora en la llegada de componentes del exterior, cuando son necesarios, detiene completamente el avance del proyecto.
+	\item Probabilidad de ocurrencia (O): 9
 
-		      Las demora de recursos del exterior es muy recurrente en Argentina.
-	\end{itemize}
+	      Las demora de recursos del exterior es muy recurrente en Argentina.
+\end{itemize}
 
-	Riesgo 2: El vinculo con la empresa se termine en un plazo muy corto.
-	\begin{itemize}
-		\item Severidad (S): 10.
+Riesgo 2: El vinculo con la empresa se termine en un plazo muy corto.
+\begin{itemize}
+	\item Severidad (S): 10.
 
-		      No será posible realizar el proyecto.
-		\item Ocurrencia (O): 2.
+	      No será posible realizar el proyecto.
+	\item Ocurrencia (O): 2.
 
-		      El vinculo actual con \clientename\hspace{1px}  es poco probable que finalice debido a que actualmente el autor trabaja en relación de dependencia para el.
-	\end{itemize}
+	      El vinculo actual con \clientename\hspace{1px}  es poco probable que finalice debido a que actualmente el autor trabaja en relación de dependencia para el.
+\end{itemize}
 
-	Riesgo 3: Accidentes graves en las verificaciones del proyecto debido a los riesgos asociados a la alta tensión.
-	\begin{itemize}
-		\item Severidad (S): 10.
+Riesgo 3: Accidentes graves en las verificaciones del proyecto debido a los riesgos asociados a la alta tensión.
+\begin{itemize}
+	\item Severidad (S): 10.
 
-		      EL uso de tensiones mayores a 300 V puede causar daños graves y poner en riesgo el avance del proyecto.
-		\item Ocurrencia (O): 5.
+	      EL uso de tensiones mayores a 300 V puede causar daños graves y poner en riesgo el avance del proyecto.
+	\item Ocurrencia (O): 5.
 
-		      El constante uso de las placas con altas tensiones aumenta el riesgo de que se produzcan accidentes.
-	\end{itemize}
+	      El constante uso de las placas con altas tensiones aumenta el riesgo de que se produzcan accidentes.
+\end{itemize}
 
-	Riesgo 4: Cancelación del proyecto del block de energía por decisión de la empresa.
-	\begin{itemize}
-		\item Severidad (S): 10.
+Riesgo 4: Cancelación del proyecto del block de energía por decisión de la empresa.
+\begin{itemize}
+	\item Severidad (S): 10.
 
-		      La cancelación del proyecto del block de energía torna innecesario el desarrollo de este proyecto
-		\item Ocurrencia (O): 2.
+	      La cancelación del proyecto del block de energía torna innecesario el desarrollo de este proyecto
+	\item Ocurrencia (O): 2.
 
-		      La tecnología actualmente es muy demandada y no se presentan amenazas evidentes sobre la continuidad del proyecto.
-	\end{itemize}
+	      La tecnología actualmente es muy demandada y no se presentan amenazas evidentes sobre la continuidad del proyecto.
+\end{itemize}
 
-	Riesgo 5: Subestimación de tiempos en tareas de la línea crítica
-	\begin{itemize}
-		\item Severidad (S): 6.
+Riesgo 5: Subestimación de tiempos en tareas de la línea crítica
+\begin{itemize}
+	\item Severidad (S): 6.
 
-		      Este error en la planificación indefectiblemente atrasa todo el plan.
+	      Este error en la planificación indefectiblemente atrasa todo el plan.
 
-		\item Ocurrencia (O): 7.
+	\item Ocurrencia (O): 7.
 
-		      El poco conocimiento sobre la complejidad del problema a resolver aumenta significativamente las probabilidades de error en la estimación de tiempos.
-	\end{itemize}
-	b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-	\begin{table}[htpb]
-		\centering
-		\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
-			\hline
-			\rowcolor[HTML]{C0C0C0}
-			Riesgo & S  & O & RPN & S* & O* & RPN* \\ \hline
-			1      & 8  & 9 & 72  & 8  & 3  & 24   \\ \hline
-			2      & 10 & 2 & 20  &    &    &      \\ \hline
-			3      & 10 & 5 & 50  & 10 & 1  & 10   \\ \hline
-			4      & 10 & 2 & 20  &    &    &      \\ \hline
-			5      & 6  & 7 & 42  &    &    &      \\ \hline
-		\end{tabularx}%
-	\end{table}
+	      El poco conocimiento sobre la complejidad del problema a resolver aumenta significativamente las probabilidades de error en la estimación de tiempos.
+\end{itemize}
+b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+\begin{table}[htpb]
+	\centering
+	\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		Riesgo & S  & O & RPN & S* & O* & RPN* \\ \hline
+		1      & 8  & 9 & 72  & 8  & 3  & 24   \\ \hline
+		2      & 10 & 2 & 20  &    &    &      \\ \hline
+		3      & 10 & 5 & 50  & 10 & 1  & 10   \\ \hline
+		4      & 10 & 2 & 20  &    &    &      \\ \hline
+		5      & 6  & 7 & 42  &    &    &      \\ \hline
+	\end{tabularx}%
+\end{table}
 
-	Criterio adoptado:
-	Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 45
+Criterio adoptado:
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 45
 
-	Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
-	c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
 
-	Riesgo 1: Se definirá con celeridad la lista de componente y se realizara el pedido con anticipación para asegurar un período de tiempo extenso desde que se piden los elementos al exterior hasta que se los necesite.
-	
-	- Severidad (S): 8
-	
-	La severidad no varía.
+Riesgo 1: Se definirá con celeridad la lista de componente y se realizara el pedido con anticipación para asegurar un período de tiempo extenso desde que se piden los elementos al exterior hasta que se los necesite.
 
-	- Probabilidad de ocurrencia (O): 3
-	
-	La anticipación reduce significativamente la probabilidad de que ocupara.
+- Severidad (S): 8
 
-	Riesgo 3: Se utilizará serigrafía en la placa para indicar las regiones de alta tensión, se utilizara las protecciones y aislaciones necesarias para reducir la probabilidad de shock eléctrico.
+La severidad no varía.
 
-	- Severidad (S): 8
-	
-	La severidad no varía.
-	
-	- Probabilidad de ocurrencia (O): 2
-	
-	La anticipación reduce significativamente la probabilidad de que ocupara.
+- Probabilidad de ocurrencia (O): 3
+
+La anticipación reduce significativamente la probabilidad de que ocupara.
+
+Riesgo 3: Se utilizará serigrafía en la placa para indicar las regiones de alta tensión, se utilizara las protecciones y aislaciones necesarias para reducir la probabilidad de shock eléctrico.
+
+- Severidad (S): 8
+
+La severidad no varía.
+
+- Probabilidad de ocurrencia (O): 2
+
+La anticipación reduce significativamente la probabilidad de que ocupara.
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-	Para cada uno de los requerimientos del proyecto indique:
-	\begin{itemize}
-		\item Req \#1: copiar acá el requerimiento.
+\begin{enumerate}
+	\item Interfases
+	      \begin{enumerate}
+		      \item El sistema debe poder comunicarse con una PC
 
-		      \begin{itemize}
-			      \item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar
-			      \item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar
-		      \end{itemize}
+		            Verificación: se verifica el envío de las tramas series esperadas para cada comando.
 
-	\end{itemize}
+		            Validación: el sistema responde a los comandos seteados por el usuario como espera.
+		      \item El sistema debe poseer un botón de encendido
 
-	Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+		            Verificación: el sistema enciende al presionar el botón. Las transiciones de tensión son las adecuadas.
 
-\end{consigna}
+		            Validación: el sistema siempre enciende cuando se presiona el botón.
+
+		      \item El sistema debe tener actuadores que simulen una señal de potencia.
+
+		            Verificación: se miden tensiones del 220[V] rms alterna y 450[V] continua en las salidas de potencia al activarlas.
+
+		            Validación: la placa de control detecta las señales de la placa de prueba.
+		      \item El sistema debe tener actuadores con señales de baja tensión.
+
+		            Verificación: se miden tensiones del 5[V] continua en las salidas de baja tensión al activarlas.
+
+		            Validación: la placa de control detecta las señales de la placa de prueba.
+
+		      \item El sistema debe tener actuadores resistivos.
+
+		            Verificación: la resistencia varia al setear un cambio. También alcanza los extremos esperados
+		            (condicionado por el sensor NTC de la placa de control)
+
+		            Validación: la placa de control mide todo el rango de temperaturas válidas.
+
+		      \item El sistema debe informar el estado de las señales (on/off).
+		            Verificación: se observa el encendido de cada LED al activar la señal.
+
+		            Validación: el usuario puede reportar, observando la placa, que señal esta activa en menos de 3 segundos.
+	      \end{enumerate}
+	\item Requerimientos funcionales
+	      \begin{enumerate}
+		      \item Emulación de altas tensiones continuas
+		            \begin{enumerate}
+			            \item El sistema debe controlar salidas de tensión que emulen las tensiones de continua elevadas que mide el block de energía.
+			                  Verificación: se miden las tensiones de salida de potencia al activar la señal.
+
+			                  Validación: la placa de control mide las tensiones de continua.
+			            \item El sistema debe permitir que el usuario configure el valor de tensión continua elevada a emular.
+
+			                  Verificación: configurando con saltos de 20 V, y en un rango de 0 a 450 V, se miden las tensiones de salida esperadas al activar la señal.
+
+			                  Validación: la placa de control mide las tensiones configuradas de tensión continua.
+
+			            \item El sistema debe reportar error si no se configura un valor válido de tensión.
+
+			                  Verificación: se observa que se reporta un mensaje de error al no configurar un valor válido de tensión. Tampoco se miden las tensiones en la salida de la placa.
+
+			                  Validación: el usuario interpreta el mensaje de error.
+
+			            \item El sistema debe permitir configurar las tensiones elevadas continuas Vbatt, Vbus y Vrelé de la Figura 1 de forma independiente.
+
+			                  Verificación: se verifica que configurando tres valores válidos de Vbatt, Vbus y Vrelé las salidas se miden correctamente. Se debe verificar con 5 V de diferencia entre señales y con 50 V de diferencia entre señales.
+
+			                  Validación: la placa de control mide las tensiones configuradas de tensión.
+
+			            \item El sistema emulará tensiones de bus, batería y relé en un rango comprendido entre 0 V a 450 V.
+
+			                  Verificación: para cada señal se puede verificar que la tensión de salida medida es la configurada en todo el rango de tensiones con saltos de 20 V.
+
+			                  Validación: la placa de prueba mide la misma tensión que la configurada con un error de 5 V.
+		            \end{enumerate}
+		      \item Simulación de corriente con bajas tensiones de continua
+		            \begin{enumerate}
+			            \item El sistema debe controlar salidas de tensión que simulen la medición de corriente de los sensores utilizados por el block de energía.
+			                  Verificación: se miden las tensiones de salida al activar la señal.
+
+			                  Validación: la placa de control mide corrientes al activar las señales.
+			            \item El sistema debe permitir que el usuario configure el valor de corriente a simular.
+
+			                  Verificación: configurando con saltos de 5 A, se miden las tensiones esperadas al activar la señal.
+
+			                  Validación: la placa de control mide las corrientes configuradas de corriente.
+
+			            \item El sistema debe reportar error si no se configura un valor válido de corriente.
+
+			                  Verificación: se observa que se reporta un mensaje de error al no configurar un valor válido de corriente. Tampoco se miden las tensiones en la salida de la placa.
+
+			                  Validación: el usuario interpreta el mensaje de error.
+			            \item El sistema debe permitir configurar las corrientes Igrid e Ibatt de la Figura \ref{fig:diagBloques} de forma independiente.
+
+			                  Verificación: se verifica que configurando dos valores válidos de Igrid y Ibatt las salidas se miden correctamente. Se debe verificar con 5 A de diferencia entre señales.
+		            \end{enumerate}
+		      \item Emulación de tensiones alternas
+		            \begin{enumerate}
+			            \item El sistema debe controlar salidas de tensión que emulen las tensiones alternas que mide el block de energía.
+
+			                  Verificación: se miden las tensiones de salida al activar la señal.
+
+			                  Validación: la placa de control mide las tensiones alternas.
+			            \item El sistema debe permitir que el usuario configure el valor de tensión a emular.
+
+			                  Verificación: configurando con saltos de 20 V, y en un rango de 0 a 240 Vrms, se miden las tensiones de salida esperadas al activar la señal.
+
+			                  Validación: la placa de control mide las tensiones configuradas de tensión.
+			            \item El sistema debe reportar error si no se configura un valor válido de tensión alterna.
+
+			                  Verificación: se observa que se reporta un mensaje de error al no configurar un valor válido de tensión alterna. Tampoco se miden las tensiones en la salida de la placa.
+
+			                  Validación: el usuario interpreta el mensaje de error.
+			            \item El sistema debe permitir configurar las tensiones alternas Vgrid y Vinverter de la Figura \ref{fig:diagBloques} de forma independiente.
+
+			                  Verificación: se verifica que configurando dos valores válidos de Vgrid y Vinverter las salidas se miden correctamente. Se debe verificar con 5 Vrms de diferencia entre señales y con 50 Vrms de diferencia entre señales.
+
+			            \item El sistema emulará tensiones alternas (Vinverter y Vgrid) en un rango comprendido entre 0 y 240 Vrms.
+
+			                  Verificación: para cada señal se puede verificar que la tensión de salida medida es la configurada en todo el rango de tensiones alternas con saltos de 20 Vrms.
+
+			                  Validación: la placa de prueba mide la misma tensión que la configurada con un error de 5 Vrms.
+		            \end{enumerate}
+		      \item Simulación de temperaturas
+		            \begin{enumerate}
+			            \item El sistema debe controlar resistencias variables que emulen la variación de resistencia de un termistor NTC por temperatura.
+
+			                  Verificación: se miden las resistencias de salida al activar la señal.
+
+			                  Validación: la placa de control mide las temperaturas correspondientes a las resistencias de salida.
+			            \item El sistema debe permitir que el usuario configure el valor de temperatura a emular.
+
+			                  Verificación: configurando con saltos de 5 C, en un rango de 0 C a 100 C, se miden las resistencias de salida esperadas al activar la señal.
+
+			                  Validación: la placa de control mide las temperaturas configuradas.
+			            \item El sistema debe reportar error si no se configura un valor válido de temperatura.
+
+			                  Verificación: se observa que se reporta un mensaje de error al no configurar un valor válido de temperatura. Tampoco se miden las resistencias de salida.
+
+			                  Validación: el usuario interpreta el mensaje de error.
+			            \item El sistema debe permitir configurar las temperaturas Tcoil, Tigbt y ambiente de la Figura \ref{fig:diagBloques} de forma independiente.
+
+			                  Verificación: se verifica que configurando dos valores válidos de Tcoil, Tigbt y ambiente las salidas se miden correctamente. Se debe verificar con 5 C de diferencia entre señales.
+
+			                  Validación: la placa de control mide las temperaturas correspondientes a las resistencias de salida.
+			            \item El sistema simulará las temperaturas en un rango comprendido entre 5 a 150 ºC.
+
+			                  Verificación: para cada señal se puede verificar que la resistencia de salida medida es la configurada en todo el rango de temperaturas con saltos de 5 ºC.
+
+			                  Validación: la placa de prueba mide la misma resistencia que la configurada con un error de 5 ºC.
+		            \end{enumerate}
+	      \end{enumerate}
+	\item Requerimientos de rendimiento
+	      \begin{enumerate}
+		      \item El sistema debe actuar en un tiempo menor a 150 ms luego de recibir un comando del usuario.
+
+		            Verificación: se miden los tiempos de respuesta desde que llega la señal por UART a la placa de prueba hasta que se mide una señal a la salida.
+
+		            Validación: el usuario esta conforme con la respuesta del sistema.
+	      \end{enumerate}
+\end{enumerate}
 
 \section{15. Procesos de cierre}
 \label{sec:cierre}
 
-\begin{consigna}{red}
-	Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
-	\begin{itemize}
-		\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-		      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
-		\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-		      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-		\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-		      - Indicar esto y quién financiará los gastos correspondientes.
-	\end{itemize}
+\begin{itemize}
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+	      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+	      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+	      - Indicar esto y quién financiará los gastos correspondientes.
+\end{itemize}
 
-\end{consigna}
-
+\begin{itemize}
+	\item Análisis de correspondencia con el Plan de Proyecto original.
+	      \begin{itemize}
+		      \item Responsable: \authorname\hspace{1px}.
+		      \item Se analizará cuales fueron los motivos que desviaron a las tareas retrasadas del plan original.
+	      \end{itemize}
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron.
+	      \begin{itemize}
+		      \item Responsable: \authorname\hspace{1px}.
+		      \item Se generará documentación durante el avance del proyecto sobre las técnicas y herramientas recurridas. Al finalizar se realizara un compendio con todas las herramientas que resultaron de mayor utilidad para el desarrollo del proyecto.
+	      \end{itemize}
+	      \begin{itemize}
+		      \item Responsable: \authorname\hspace{1px}.
+		      \item Se realizará un acto por la plataforma Meet para agradecer a todos los que hicieron posible el desarrollo del proyecto: colaboradores, profesores de la maestría y el equipo de trabajo.
+	      \end{itemize}
+\end{itemize}
 
 \end{document}
