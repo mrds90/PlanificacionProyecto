@@ -396,7 +396,7 @@ Cantidad total de horas: 609.5 hs.
 
 	\begin{figure}[htpb]
 		\centering
-		\includegraphics[width=1.5\textwidth]{./Figuras/Aon_cropped.pdf}
+		\includegraphics[width=1.25\textwidth]{./Figuras/Aon_cropped.pdf}
 		\caption{Diagrama en \textit{Activity on Node}}
 		\label{fig:AoN}
 	\end{figure}
@@ -472,7 +472,7 @@ Cantidad total de horas: 609.5 hs.
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
 
 Riesgo 1: Demora en la llegada de componentes del exterior.
 \begin{itemize}
@@ -498,7 +498,7 @@ Riesgo 3: Accidentes graves en las verificaciones del proyecto debido a los ries
 \begin{itemize}
 	\item Severidad (S): 10.
 
-	      EL uso de tensiones mayores a 300 V puede causar daños graves y poner en riesgo el avance del proyecto.
+	      El uso de tensiones mayores a 300 V puede causar daños graves y poner en riesgo el avance del proyecto.
 	\item Ocurrencia (O): 5.
 
 	      El constante uso de las placas con altas tensiones aumenta el riesgo de que se produzcan accidentes.
@@ -508,13 +508,13 @@ Riesgo 4: Cancelación del proyecto del block de energía por decisión de la em
 \begin{itemize}
 	\item Severidad (S): 10.
 
-	      La cancelación del proyecto del block de energía torna innecesario el desarrollo de este proyecto
+	      La cancelación del proyecto del block de energía torna innecesario el desarrollo de este proyecto.
 	\item Ocurrencia (O): 2.
 
 	      La tecnología actualmente es muy demandada y no se presentan amenazas evidentes sobre la continuidad del proyecto.
 \end{itemize}
 
-Riesgo 5: Subestimación de tiempos en tareas de la línea crítica
+Riesgo 5: Subestimación de tiempos en tareas de la línea crítica.
 \begin{itemize}
 	\item Severidad (S): 6.
 
@@ -554,7 +554,7 @@ La severidad no varía.
 
 - Probabilidad de ocurrencia (O): 3
 
-La anticipación reduce significativamente la probabilidad de que ocupara.
+La anticipación reduce significativamente la probabilidad de que ocurra.
 
 Riesgo 3: Se utilizará serigrafía en la placa para indicar las regiones de alta tensión, se utilizara las protecciones y aislaciones necesarias para reducir la probabilidad de shock eléctrico.
 
@@ -564,7 +564,7 @@ La severidad no varía.
 
 - Probabilidad de ocurrencia (O): 2
 
-La anticipación reduce significativamente la probabilidad de que ocupara.
+La anticipación reduce significativamente la probabilidad de que ocurra.
 
 
 \section{14. Gestión de la calidad}
@@ -573,12 +573,12 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 \begin{enumerate}
 	\item Interfases
 	      \begin{enumerate}
-		      \item El sistema debe poder comunicarse con una PC
+		      \item El sistema debe poder comunicarse con una PC.
 
 		            Verificación: se verifica el envío de las tramas series esperadas para cada comando.
 
 		            Validación: el sistema responde a los comandos seteados por el usuario como espera.
-		      \item El sistema debe poseer un botón de encendido
+		      \item El sistema debe poseer un botón de encendido.
 
 		            Verificación: el sistema enciende al presionar el botón. Las transiciones de tensión son las adecuadas.
 
@@ -586,12 +586,12 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 
 		      \item El sistema debe tener actuadores que simulen una señal de potencia.
 
-		            Verificación: se miden tensiones del 220[V] rms alterna y 450[V] continua en las salidas de potencia al activarlas.
+		            Verificación: se miden tensiones del 220 V rms alterna y 450 V continua en las salidas de potencia al activarlas.
 
 		            Validación: la placa de control detecta las señales de la placa de prueba.
 		      \item El sistema debe tener actuadores con señales de baja tensión.
 
-		            Verificación: se miden tensiones del 5[V] continua en las salidas de baja tensión al activarlas.
+		            Verificación: se miden tensiones de 5 V continua en las salidas de baja tensión al activarlas.
 
 		            Validación: la placa de control detecta las señales de la placa de prueba.
 
@@ -603,15 +603,17 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 		            Validación: la placa de control mide todo el rango de temperaturas válidas.
 
 		      \item El sistema debe informar el estado de las señales (on/off).
+
 		            Verificación: se observa el encendido de cada LED al activar la señal.
 
 		            Validación: el usuario puede reportar, observando la placa, que señal esta activa en menos de 3 segundos.
 	      \end{enumerate}
 	\item Requerimientos funcionales
 	      \begin{enumerate}
-		      \item Emulación de altas tensiones continuas
+		      \item Emulación de altas tensiones continuas.
 		            \begin{enumerate}
 			            \item El sistema debe controlar salidas de tensión que emulen las tensiones de continua elevadas que mide el block de energía.
+
 			                  Verificación: se miden las tensiones de salida de potencia al activar la señal.
 
 			                  Validación: la placa de control mide las tensiones de continua.
@@ -642,14 +644,15 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 		      \item Simulación de corriente con bajas tensiones de continua
 		            \begin{enumerate}
 			            \item El sistema debe controlar salidas de tensión que simulen la medición de corriente de los sensores utilizados por el block de energía.
+
 			                  Verificación: se miden las tensiones de salida al activar la señal.
 
-			                  Validación: la placa de control mide corrientes al activar las señales.
+			                  Validación: la placa de control mide las corrientes al activar las señales.
 			            \item El sistema debe permitir que el usuario configure el valor de corriente a simular.
 
 			                  Verificación: configurando con saltos de 5 A, se miden las tensiones esperadas al activar la señal.
 
-			                  Validación: la placa de control mide las corrientes configuradas de corriente.
+			                  Validación: la placa de control mide las corrientes configuradas.
 
 			            \item El sistema debe reportar error si no se configura un valor válido de corriente.
 
@@ -671,7 +674,7 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 
 			                  Verificación: configurando con saltos de 20 V, y en un rango de 0 a 240 Vrms, se miden las tensiones de salida esperadas al activar la señal.
 
-			                  Validación: la placa de control mide las tensiones configuradas de tensión.
+			                  Validación: la placa de control mide las tensiones configuradas.
 			            \item El sistema debe reportar error si no se configura un valor válido de tensión alterna.
 
 			                  Verificación: se observa que se reporta un mensaje de error al no configurar un valor válido de tensión alterna. Tampoco se miden las tensiones en la salida de la placa.
@@ -681,6 +684,7 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 
 			                  Verificación: se verifica que configurando dos valores válidos de Vgrid y Vinverter las salidas se miden correctamente. Se debe verificar con 5 Vrms de diferencia entre señales y con 50 Vrms de diferencia entre señales.
 
+			                  Validación: la placa de control mide las tensiones configuradas.
 			            \item El sistema emulará tensiones alternas (Vinverter y Vgrid) en un rango comprendido entre 0 y 240 Vrms.
 
 			                  Verificación: para cada señal se puede verificar que la tensión de salida medida es la configurada en todo el rango de tensiones alternas con saltos de 20 Vrms.
@@ -729,17 +733,6 @@ La anticipación reduce significativamente la probabilidad de que ocupara.
 \section{15. Procesos de cierre}
 \label{sec:cierre}
 
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	      - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	      - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
 \begin{itemize}
 	\item Análisis de correspondencia con el Plan de Proyecto original.
 	      \begin{itemize}
@@ -751,6 +744,7 @@ Establecer las pautas de trabajo para realizar una reunión final de evaluación
 		      \item Responsable: \authorname\hspace{1px}.
 		      \item Se generará documentación durante el avance del proyecto sobre las técnicas y herramientas recurridas. Al finalizar se realizara un compendio con todas las herramientas que resultaron de mayor utilidad para el desarrollo del proyecto.
 	      \end{itemize}
+	\item Acto de agradecimiento a todos los interesados.
 	      \begin{itemize}
 		      \item Responsable: \authorname\hspace{1px}.
 		      \item Se realizará un acto por la plataforma Meet para agradecer a todos los que hicieron posible el desarrollo del proyecto: colaboradores, profesores de la maestría y el equipo de trabajo.
